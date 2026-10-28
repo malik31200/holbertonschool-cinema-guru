@@ -1,0 +1,262 @@
+
+/* ========================================
+   CINEMA GURU — CINEMA / HALLOWEEN THEME
+   ======================================== */
+
+:root {
+    --color-background: #121212;
+    --color-input-dark: #1C1C1C;
+    --color-surface: #2C2C2C;
+    --color-primary: #E31C25;
+    --color-button: #BB000E;
+    --color-halloween: #FF7518;
+    --color-white: #FFFFFF;
+    --color-gray: #808080;
+    --font-family: "Roboto", sans-serif;
+}
+
+/* ========================================
+   INPUT — CONTENEUR ET LABELS
+   ======================================== */
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-sizing: border-box;
+}
+
+.input-container label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    color: var(--color-primary);
+}
+
+/* Conteneur de l'icône et du champ */
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-sizing: border-box;
+}
+
+/* Icônes dans les champs */
+
+.input-container .input-wrapper svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    color: var(--color-primary);
+}
+
+/* Champ de saisie — style par défaut */
+
+.input-wrapper input {
+    width: 354px;
+    height: 21px;
+    padding: 2px 4px;
+    box-sizing: border-box;
+    border: 1px solid var(--color-primary);
+    border-radius: 0;
+    background-color: var(--color-input-dark);
+    color: var(--color-white);
+    font-family: var(--font-family);
+    font-size: 14px;
+}
+
+/* Variante claire */
+
+.input-wrapper input.input-light {
+    background-color: var(--color-white);
+    color: var(--color-input-dark);
+}
+
+/* Variante sombre */
+
+.input-wrapper input.input-dark {
+    background-color: var(--color-surface);
+    color: var(--color-white);
+}
+
+/* Message d'erreur */
+
+.error-message {
+    margin: 0;
+    color: var(--color-primary);
+    font-family: var(--font-family);
+    font-size: 12px;
+    font-weight: 200;
+    line-height: 16px;
+}
+
+/* ========================================
+   SELECT INPUT
+   ======================================== */
+
+.input-container select {
+    width: 100%;
+    min-height: 21px;
+    padding: 2px 4px;
+    box-sizing: border-box;
+    border: 1px solid var(--color-primary);
+    border-radius: 0;
+    background-color: var(--color-surface);
+    color: var(--color-white);
+    font-family: var(--font-family);
+    font-size: 14px;
+}
+
+/* ========================================
+   BUTTON — BOUTONS D'ACTION
+   ======================================== */
+
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 34px;
+    padding: 0 12px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0;
+    background-color: var(--color-button);
+    color: var(--color-white);
+    font-family: var(--font-family);
+    font-size: 15px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Bouton Sign in */
+
+.button-sign-in {
+    width: 104px;
+    height: 34px;
+    padding: 0;
+    background-color: var(--color-button);
+    color: var(--color-white);
+    font-size: 15px;
+    font-weight: 400;
+}
+
+/* Survol des boutons d'action */
+
+button:hover {
+    background-color: var(--color-halloween);
+    color: var(--color-white);
+}
+
+/* Icône dans un bouton */
+
+button svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* ========================================
+   BOUTONS DE CATÉGORIES
+   Exemples : Action, Drama, Comedy
+   ======================================== */
+
+.category-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 67px;
+    height: 24px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border: 1px solid var(--color-primary);
+    border-radius: 15px;
+    background-color: var(--color-input-dark);
+    color: var(--color-white);
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.category-button:hover,
+.category-button.active {
+    border-color: var(--color-halloween);
+    background-color: var(--color-halloween);
+    color: var(--color-background);
+}
+
+/* ========================================
+   SEARCH BAR
+   ======================================== */
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 535px;
+    height: 28px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--color-surface);
+}
+
+/* Texte de recherche */
+
+.search-bar input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: var(--color-white);
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: left;
+}
+
+/* Texte indicatif lorsque le champ est vide */
+
+.search-bar input::placeholder {
+    color: var(--color-white);
+    opacity: 1;
+}
+
+/* Icône facultative dans la barre de recherche */
+
+.search-bar svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    color: var(--color-halloween);
+}
+
+/* ========================================
+   ADAPTATION AUX PETITS ÉCRANS
+   ======================================== */
+
+@media (max-width: 600px) {
+    .search-bar {
+        width: 100%;
+        max-width: 535px;
+    }
+
+    .input-wrapper input {
+        max-width: 100%;
+    }
+}
