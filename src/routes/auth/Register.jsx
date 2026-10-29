@@ -27,7 +27,7 @@ function Register({
             <Button
                 label="Sign Up"
                 className="button-sign-up"
-                onClick={() => {}}
+                type="submit"
             />
         </div>
     );

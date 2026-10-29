@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import axios from 'axios';
 import './auth.css';
 import Button from '../../components/general/Button';
 import Login from './Login';
@@ -9,9 +10,32 @@ function Authentication({ setIsLoggedIn, setUserUsername }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        try {
+            const route = _switch
+            ? '/api/auth/login'
+            : '/api/auth/register';
+
+            const response = await axios.post( route, {
+                username,
+                password,
+            });
+
+            const accessToken = response.data.accessToken;
+
+            localStorage.setItem('accessToken', accessToken);
+            setUserUsername(username)
+            setIsLoggedIn(true);
+        } catch (error) {
+            console.error('Authentication failed:', error);
+        }
+    };
+
     return (
         <div className="authentication">
-            <form>
+            <form onSubmit={handleSubmit}>  
                 <div className="auth-buttons">
                     <Button
                         label="Sign In"

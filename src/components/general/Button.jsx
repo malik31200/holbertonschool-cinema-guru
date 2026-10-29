@@ -6,10 +6,11 @@ function Button({
     className = '',
     onClick,
     icon,
+    type = 'button',
 }) {
     return (
         <button
-            type="button"
+            type={type}
             className={className}
             onClick={onClick}
         >
