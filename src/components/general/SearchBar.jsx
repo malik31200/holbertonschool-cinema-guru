@@ -4,7 +4,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 
 function SearchBar({ title, setTitle }) {
     const handleInput = (event) => {
-        setTitle(event.target.title)
+        setTitle(event.target.value)
     }
 
     return (

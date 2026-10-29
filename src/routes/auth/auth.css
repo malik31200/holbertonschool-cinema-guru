@@ -1,0 +1,81 @@
+
+/* ========================================
+   AUTHENTICATION
+   ======================================== */
+
+.authentication {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px;
+    box-sizing: border-box;
+    background-color: var(--color-background);
+    font-family: var(--font-family);
+}
+
+.authentication form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Sign In and Sign Up navigation buttons */
+
+.auth-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.auth-buttons button {
+    min-width: 104px;
+}
+
+/* Login and Register forms */
+
+.login,
+.register {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Make input fields fit the form width */
+
+.login .input-container,
+.register .input-container {
+    width: 100%;
+}
+
+.login .input-wrapper input,
+.register .input-wrapper input {
+    width: 100%;
+    max-width: 100%;
+}
+
+/* Form submission buttons */
+
+.login .button-sign-in,
+.register .button-sign-up {
+    align-self: center;
+    min-width: 104px;
+}
+
+/* Responsive layout for small screens */
+
+@media (max-width: 480px) {
+    .authentication {
+        padding: 16px;
+    }
+
+    .authentication form {
+        max-width: 100%;
+    }
+}
