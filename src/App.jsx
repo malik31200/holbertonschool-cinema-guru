@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Authentication from './routes/auth/Authentication';
+import Dashboard from './routes/dashboard/Dashboard';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -41,7 +42,10 @@ function App() {
 
   return <div className='App'>
     {isLoggedIn ? (
-      <div>Dashboard</div>
+      <Dashboard
+        userUsername={userUsername}
+        setIsLoggedIn={setIsLoggedIn}
+      />
     ) : (
       <Authentication
         setIsLoggedIn={setIsLoggedIn}
