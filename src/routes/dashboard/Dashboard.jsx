@@ -1,5 +1,6 @@
 import './dashboard.css';
 import Header from '../../components/navigation/Header';
+import SideBar from '../../components/navigation/SideBar';
 
 function Dashboard({ userUsername, setIsLoggedIn }) {
     return(
@@ -8,6 +9,7 @@ function Dashboard({ userUsername, setIsLoggedIn }) {
                 userUsername={userUsername}
                 setIsLoggedIn={setIsLoggedIn}
             />
+            <SideBar />
         </div>
     )
 }

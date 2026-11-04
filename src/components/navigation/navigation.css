@@ -56,3 +56,99 @@
     width: 15px;
     height: 15px;
 }
+
+/* SIDEBAR */
+
+.sidebar {
+    position: fixed;
+    top: 62px;
+    left: 0;
+    height: calc(100vh - 62px);
+    background-color: var(--color-primary);
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: width 0.3s ease;
+    z-index: 10;
+}
+
+.sidebar-small {
+    width: 65px;
+}
+
+.sidebar-large {
+    width: 240px;
+}
+
+/* MENUS DE LA SIDEBAR */
+
+.sidebar-menu {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+}
+
+.sidebar-menu li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 55px;
+    padding: 0 23px;
+    box-sizing: border-box;
+    color: var(--color-white);
+    font-size: 15px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar-menu li:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-menu li.active {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-left: 4px solid var(--color-halloween);
+}
+
+.sidebar-menu li svg {
+    min-width: 20px;
+    font-size: 18px;
+}
+
+/* Masquer les textes lorsque la Sidebar est réduite */
+
+.sidebar-small .sidebar-menu span {
+    display: none;
+}
+
+/* LATEST ACTIVITIES */
+
+.latest-activities {
+    margin: 10px;
+    padding: 12px;
+    background-color: #171717;
+    border: 2px solid var(--color-primary);
+    border-radius: 5px;
+    color: var(--color-white);
+}
+
+.latest-activities h3 {
+    margin: 0 0 15px;
+    padding-bottom: 10px;
+    color: var(--color-halloween);
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid var(--color-primary);
+}
+
+.activity-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Masquer le bloc en mode réduit */
+
+.sidebar-small .latest-activities {
+    display: none;
+}

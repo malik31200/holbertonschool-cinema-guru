@@ -1,0 +1,14 @@
+.activity-highlight {
+    color: var(--color-primary);
+}
+
+.activity-item {
+    margin-bottom: 12px;
+    list-style: none;
+}
+
+.activity-item p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--color-white);
+}
