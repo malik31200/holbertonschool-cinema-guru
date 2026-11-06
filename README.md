@@ -72,6 +72,7 @@ src/
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/) (v18 or later)
+- [Yarn](https://yarnpkg.com/) (v1)
 - [Docker](https://www.docker.com/) to run the API
 - The **Cinema Guru API**: `holbertonschool-cinema-guru-API`
 
@@ -91,8 +92,8 @@ The API runs on **<http://localhost:8000>**.
 
 ```bash
 cd holbertonschool-cinema-guru
-npm install
-npm run dev
+yarn install
+yarn dev
 ```
 
 The app runs on **<http://localhost:3000>**.
@@ -122,10 +123,10 @@ All routes except register and login need the header `Authorization: Bearer <tok
 
 | Command | Description |
 | --- | --- |
-| `npm run dev` | Start the development server |
-| `npm run build` | Build the app for production |
-| `npm run preview` | Preview the production build |
-| `npm run lint` | Run ESLint |
+| `yarn dev` | Start the development server |
+| `yarn build` | Build the app for production |
+| `yarn preview` | Preview the production build |
+| `yarn lint` | Run ESLint |
 
 ---
 
