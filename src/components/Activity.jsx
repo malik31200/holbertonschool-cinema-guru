@@ -5,6 +5,10 @@ function Activity({ activity }) {
         ? 'favorites'
         : 'watch later';
 
+    const isRemoved = activity.activityType.startsWith('remove');
+    const action = isRemoved ? 'removed' : 'added';
+    const preposition = isRemoved ? 'from' : 'to';
+
     const date = new Date(activity.createdAt).toLocaleDateString('en-US', {
         month: 'long',
         day: 'numeric',
@@ -15,9 +19,9 @@ function Activity({ activity }) {
         <li className="activity-item">
             <p>
                  <span className="activity-highlight">{activity.user.username}</span>
-                 {' '}added{' '}
+                 {' '}{action}{' '}
                  <span className="activity-highlight">{activity.title.title}</span>
-                 {' '}to {destination} - {date}
+                 {' '}{preposition} {destination} - {date}
             </p>
         </li>
     );

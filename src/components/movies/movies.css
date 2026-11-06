@@ -1,0 +1,141 @@
+.movie-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.movie-actions svg {
+    font-size: 20px;
+    color: var(--color-white);
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.movie-actions svg:hover {
+    transform: scale(1.2);
+}
+
+.movie-actions svg.active {
+    color: var(--color-primary);   /* cœur / horloge rouge quand actif */
+}
+
+.movie-poster {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.filter {
+    display: grid;
+    grid-template-columns: minmax(250px, 1fr) 120px 120px 200px;
+    gap: 20px;
+    align-items: end;
+    padding: 28px;
+    margin-bottom: 40px;
+    background: linear-gradient(180deg, #1a0d05 0%, #121212 100%);
+    border: 1px solid rgba(255, 117, 24, 0.4);
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(255, 117, 24, 0.15), inset 0 0 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Les genres prennent toute la largeur */
+.filter ul {
+    grid-column: 1 / -1;
+}
+
+.filter .search-bar {
+    width: 100%;
+    max-width: none;
+    height: 38px;
+    border: 1px solid rgba(255, 117, 24, 0.5);
+}
+
+/* Les deux champs d'année */
+.filter > input[type="number"] {
+    height: 38px;
+    padding: 0 12px;
+    background-color: #1c1c1c;
+    color: var(--color-halloween);
+    border: 1px solid var(--color-primary);
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+/* Le menu de tri */
+.filter .input-container label {
+    font-family: var(--font-spooky);
+    font-size: 18px;
+    letter-spacing: 2px;
+    color: var(--color-halloween);
+}
+
+.filter .input-container select {
+    height: 38px;
+    padding: 0 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Les genres */
+.filter ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+.tag {
+    display: inline-block;
+    margin: 0;
+    padding: 8px 16px;
+    list-style: none;
+    border-radius: 20px;
+    cursor: url('/pumpkin-cursor-small.png') 16 16, pointer;
+    border: 1px solid rgba(255, 117, 24, 0.5);
+    background-color: #1a1a1a;
+    color: #ddd;
+    transition: all 0.2s ease;
+}
+
+.tag:hover {
+    border-color: var(--color-halloween);
+    box-shadow: 0 0 12px rgba(255, 117, 24, 0.6);
+    color: var(--color-halloween);
+}
+
+.tag.selected {
+    background-color: var(--color-halloween);
+    border-color: var(--color-halloween);
+    color: #121212;
+    box-shadow: 0 0 15px rgba(255, 117, 24, 0.8);
+}
+
+.movie-card {
+    padding: 16px;
+    background-color: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    list-style: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-halloween);
+    box-shadow: 0 0 20px rgba(255, 117, 24, 0.5), 0 0 40px rgba(139, 0, 0, 0.4);
+}
+
+.movie-card h3 {
+    color: var(--color-halloween);
+}
+
+@media (max-width: 800px) {
+    .filter {
+        grid-template-columns: 1fr 1fr;
+    }
+    .filter .search-bar,
+    .filter .input-container {
+        grid-column: 1 / -1;
+    }
+}

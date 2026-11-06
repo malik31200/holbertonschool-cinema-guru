@@ -30,8 +30,7 @@ function SideBar () {
         }
     };
 
-    useEffect(() => {
-        const fetchActivities = async () => {
+    const fetchActivities = async () => {
             try {
                 const token = localStorage.getItem('accessToken');
 
@@ -47,13 +46,18 @@ function SideBar () {
                 console.error('Error fetching activities:', error);
             }
         };
+
+    useEffect(() => {
         fetchActivities();
     }, []);
 
     return (
         <nav
             className={`sidebar ${small ? 'sidebar-small' : 'sidebar-large'}`}
-            onMouseEnter={() => setSmall(false)}
+            onMouseEnter={() =>{
+                setSmall(false)
+                fetchActivities();
+            }}
             onMouseLeave={() => setSmall(true)}
         >  
             <ul className="sidebar-menu">

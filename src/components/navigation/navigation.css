@@ -17,6 +17,9 @@
     border-bottom: 2px solid var(--color-primary);
     color: var(--color-white);
     font-family: var(--font-family);
+    position: sticky;
+    top: 0;
+    z-index: 20;
 }
 
 /* Avatar utilisateur */
@@ -130,6 +133,7 @@
     border: 2px solid var(--color-primary);
     border-radius: 5px;
     color: var(--color-white);
+    min-width: 200px;
 }
 
 .latest-activities h3 {
